@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --mainTextColor-light: #333;
+    --secondaryTextColor-light: rgb(51,51,51);
+    --mainLinkColor-light: #0da2b8;
+    --mainBorderColor-light: rgb(157, 155, 155);
+    --mainBackgroundColor-light: rgb(249, 250, 251);
+
+    --mainTextColor-dark: #fff;
+    --secondaryTextColor-dark: #d1d5d7;
+    --mainLinkColor-dark: #0da2b8;
+    --mainBorderColor-dark: rgb(54, 50, 50);
+    --mainBackgroundColor-dark: rgb(23, 24, 25);
+
+    --mainTextColor: var(--mainTextColor-dark);
+    --secondaryTextColor: var(--secondaryTextColor-dark);
+    --mainLinkColor: var(--mainLinkColor-dark);
+    --mainBorderColor: var(--mainBorderColor-dark);
+    --mainBackgroundColor: var(--mainBackgroundColor-dark);
+}
+
+*{
+    font-family: 'Readex Pro';
+    line-height: 1.5em;
+    box-sizing: border-box;
+    color: var(--mainTextColor);
+}
+
+body{
+    color: var(--mainTextColor);
+    background-color: var(--mainBackgroundColor);
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
+p, span, li{
+    color: var(--secondaryTextColor);
+}
+
+a{
+    color: var(--mainLinkColor);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+li{
+    line-height: 1.9em;
+}
+
+#container--main{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section--page{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#profile--area{
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+#user-name{
+    font-size: 3em;
+    line-height: 1em;
+}
+
+#bio{
+    font-weight: 300;
+}
+
+#profile-pic{
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+#email{
+    color: var(--mainTextColor)
+}
+
+#socials--list{
+    display: flex;
+    justify-content: space-around;
+}
+
+#socials--list a{
+    font-size: 1.2em;
+    color: var(--mainLinkColor);
+    transition: 0.3s;
+}
+
+#socials--list a:hover{
+    color: rgb(148, 211, 223);
+}
+
+#techstack--list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    font-size: 1em;
+}
+
+.techstack--block{
+    border: 2px solid var(--mainBorderColor);
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.experience--block, .project--block{
+    border-left: 2px solid var(--mainBorderColor);
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding-left: 1.5em;
+}
+
+#projects--list a{
+    color: var(--mainLinkColor);
+    transition: 0.3s;
+}
+
+#projects--list a:hover{
+    color: rgb(150, 234, 251);
+}
+
+.line-break{
+    background-color: var(--mainBorderColor);
+    height: 1.5px;
+}
+
+@media(max-width: 600px){
+    #profile--area{
+        flex-direction: column;
+        gap: 1em;
+    }
+    #profile-pic{
+        width: 200px;
+        height: 200px;
+    }
+    .experience--block{
+        border-left: none;
+        padding-left: 0;
+    }
+    .projects--block{
+        border-left: none;
+        padding-left: 0;
+    }
+}
