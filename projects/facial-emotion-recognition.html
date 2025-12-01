@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Facial Emotion Recognition</title>
+    <meta name=""description" content="">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type="text/css" media='screen' href='../styles/main.css'>
+</head>
+<body>
+    <div id="container--main">
+        <br>
+        <a href="../index.html">&#x2190; Go Back</a>
+        <h1>Facial Emotion Recognition using CNN</h1>
+
+        <h3><strong>Data Loading and Exploration</strong></h3>
+            <ul>
+                <li><strong>Dataset:</strong> The dataset used is the "Facial Expression Dataset" from Kaggle. It contains images of faces labeled with different emotions (angry, disgust, fear, happy, neutral, sad, surprise).</li>
+                <li><strong>Loading:</strong> The <code id="code">kagglehub</code> library is used to download the dataset. The <code id="code">load_dataset</code> function reads the image paths and corresponding labels from the train and test directories.</li>
+                <li><strong>DataFrames:</strong> The loaded data is stored in pandas DataFrames for easy manipulation and analysis.</li>           
+                <li><strong>Exploration:</strong> We visualize the distribution of emotions in the training set using a countplot and display sample images to understand the data.</li>
+            </ul>   
+        <img id="project-pics" src="../assets/images/FED_Dataset.jpg">
+
+        <h3><strong>Feature Extraction and Preprocessing</strong></h3>
+            <ul>
+                <li><strong>Feature Extraction:</strong> The <code id="code">extract_features</code> function reads the images, converts them to grayscale, and stores them as NumPy arrays. The images are resized to 48x48 pixels.</li>
+                <li><strong>Normalization:</strong> The pixel values are normalized by dividing by 255.0 to scale them between 0 and 1. This helps in faster and better convergence of the model.</li>
+                <li><strong>Label Encoding:</strong> The categorical emotion labels (strings) are converted into numerical representations using <code id="code">LabelEncoder</code>.</li>
+                <li><strong>One-Hot Encoding:</strong> The numerical labels are then converted into one-hot encoded vectors. This is required for the categorical crossentropy loss function used in the model.</li>
+            </ul>
+        <img id="project-pics" src="../assets/images/FED_DataFrame.jpeg">
+        
+        <h3><strong>Model Creation and Training</strong></h3>
+            <ul>
+                <li><strong>Model Architecture:</strong> A Sequential CNN model is built with multiple convolutional layers, max-pooling layers, and dropout layers.</li>
+                <li><strong>Convolutional Layers:</strong> Extract features from the images by applying filters.</li>
+                <li><strong>Max-Pooling Layers:</strong> Reduce the spatial dimensions of the output from convolutional layers, helping to reduce the number of parameters and computation.</li>
+                <li><strong>Dropout Layers:</strong> Randomly set a fraction of input units to 0 at each update during training, which helps prevent overfitting.</li>
+                <li><strong>Flatten Layer:</strong> Flattens the output from the convolutional layers into a 1D vector to be fed into the fully connected layers.</li>
+                <li><strong>Dense Layers:</strong> Fully connected layers that perform the classification.</li>
+                <li><strong>Output Layer:</strong> A dense layer with a softmax activation function that outputs the probabilities for each emotion class.</li>
+                <li><strong>Compilation:</strong> The model is compiled with the Adam optimizer, categorical crossentropy loss function, and accuracy as the evaluation metric.</li>
+                <li><strong>Early Stopping:</strong> An EarlyStopping callback is used to stop training when the validation loss stops improving for a certain number of epochs, preventing overfitting.</li>
+                <li><strong>Training:</strong> The model is trained using the <code id="code">fit</code> method, providing the training data, batch size, number of epochs, and validation data.</li>
+            </ul>
+        <div id="project-pics-container">
+            <img id="project-pics" src="../assets/images/FED_AccuracyGraph.png">
+            <img id="project-pics" src="../assets/images/FED_LossGraph.jpeg">
+        </div>
+
+        <h3><strong>Model Evaluation and Testing</strong></h3>
+            <ul>
+                <li><strong>Plotting Results:</strong> The training and validation accuracy and loss are plotted over epochs to visualize the model's performance and check for overfitting.</li>
+                <li><strong>Testing with Image Data:</strong> A random image from the test set is selected, and the model predicts its emotion. The predicted label is compared with the original label, and the image is displayed.</li>
+                <li><strong>Saving the Model:</strong> The trained model is saved for future use.</li>
+            </ul>
+        <img id="project-pics" src="../assets/images/FED_Output.jpeg">
+
+        <h3><strong>Conclusion</strong></h3>
+            <ul>
+                <li><strong>Accuracy:</strong> The model achieved an accuracy of around 64% on the test set.</li>
+                <li><strong>Overfitting:</strong> The model showed signs of overfitting, as the training accuracy was much higher than the validation accuracy. This could be due to the small size of the dataset and the complexity of the model.</li>
+                <li><strong>Future Improvements:</strong> The model could be improved by using a larger dataset, more complex model architecture, and more data augmentation techniques and with a live camera input.</li>
+            </ul>
+        <img id="project-pics" src="../assets/images/FED_Accuracy.jpeg">
+
+        <a href="https://colab.research.google.com/drive/1f51Fe-ukkN_EUrs_bRK60PpExAeCiM-M?usp=sharing" target="_blank">Project link</a>
+    </div>
+    <br>
+    <br>
+</body>
+</html>
