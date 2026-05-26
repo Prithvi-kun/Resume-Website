@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
 
-:root{
+:root {
     --mainTextColor-light: #333;
-    --secondaryTextColor-light: rgb(51,51,51);
+    --secondaryTextColor-light: rgb(51, 51, 51);
     --mainLinkColor-light: #0da2b8;
     --mainBorderColor-light: rgb(157, 155, 155);
     --mainBackgroundColor-light: rgb(249, 250, 251);
@@ -27,14 +27,14 @@ body.light-mode {
     --mainBackgroundColor: var(--mainBackgroundColor-light);
 }
 
-*{
+* {
     font-family: 'Readex Pro';
     line-height: 1.5em;
     box-sizing: border-box;
     color: var(--mainTextColor);
 }
 
-body{
+body {
     color: var(--mainTextColor);
     background-color: var(--mainBackgroundColor);
     min-height: 100vh;
@@ -43,106 +43,109 @@ body{
     padding: 0;
 }
 
-p, span, li{
+p,
+span,
+li {
     color: var(--secondaryTextColor);
 }
 
-a{
+a {
     color: var(--mainLinkColor);
     text-decoration: none;
     font-weight: 500;
 }
 
-li{
+li {
     line-height: 1.9em;
 }
 
-#container--main{
+#container--main {
     max-width: 700px;
     margin: 0 auto;
 }
 
-.section--page{
+.section--page {
     padding-top: 1em;
     padding-bottom: 1em;
 }
 
-#profile--area{
+#profile--area {
     display: flex;
     align-items: center;
     gap: 4em;
 }
 
-#user-name{
+#user-name {
     font-size: 3em;
     line-height: 1em;
 }
 
-#bio{
+#bio {
     font-weight: 300;
 }
 
-#profile-pic{
+#profile-pic {
     border-radius: 50%;
     width: 180px;
     height: 180px;
     object-fit: cover;
 }
 
-#email{
+#email {
     color: var(--mainTextColor)
 }
 
-#socials--list{
+#socials--list {
     display: flex;
     justify-content: space-around;
 }
 
-#socials--list a{
+#socials--list a {
     font-size: 1.2em;
     color: var(--mainLinkColor);
     transition: 0.3s;
 }
 
-#socials--list a:hover{
+#socials--list a:hover {
     color: rgb(148, 211, 223);
 }
 
-#techstack--list{
+#techstack--list {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     font-size: 1em;
 }
 
-.techstack--block{
+.techstack--block {
     border: 2px solid var(--mainBorderColor);
     padding: 4px;
     border-radius: 6px;
 }
 
-.experience--block, .project--block{
+.experience--block,
+.project--block {
     border-left: 2px solid var(--mainBorderColor);
     margin-top: 3em;
     margin-bottom: 3em;
     padding-left: 1.5em;
 }
 
-#projects--list a{
+#projects--list a {
     color: var(--mainLinkColor);
     transition: 0.3s;
 }
 
-#projects--list a:hover{
+#projects--list a:hover {
     color: rgb(150, 234, 251);
 }
 
-.line-break{
+.line-break {
     background-color: var(--mainBorderColor);
     height: 1.5px;
 }
 
-#project-pics-container{
+#project-pics-container {
     width: 50%;
     display: flex;
     gap: 15px;
@@ -155,7 +158,7 @@ li{
     border-radius: 4px;
 }
 
-#project-pics{
+#project-pics {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -164,20 +167,23 @@ li{
     margin-bottom: 1em;
 }
 
-@media(max-width: 600px){
-    #profile--area{
+@media(max-width: 600px) {
+    #profile--area {
         flex-direction: column;
         gap: 1em;
     }
-    #profile-pic{
+
+    #profile-pic {
         width: 200px;
         height: 200px;
     }
-    .experience--block{
+
+    .experience--block {
         border-left: none;
         padding-left: 0;
     }
-    .projects--block{
+
+    .projects--block {
         border-left: none;
         padding-left: 0;
     }
@@ -187,18 +193,31 @@ li{
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 10px 15px;
-    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     border: 1px solid var(--mainBorderColor);
-    background-color: var(--mainTextColor);
-    color: var(--mainBackgroundColor);
+    background-color: #fff;
+    color: #000;
     cursor: pointer;
-    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: 0.3s;
     z-index: 1000;
 }
 
-.theme-toggle:hover {
-    background-color: var(--mainBorderColor);
-    color: var(--mainTextColor);
+body.light-mode .theme-toggle {
+    background-color: #000;
+    color: #fff;
+}
+
+.theme-toggle svg {
+    width: 22px;
+    height: 22px;
+}
+
+.theme-toggle svg,
+.theme-toggle svg * {
+    color: inherit;
 }
