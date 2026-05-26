@@ -16,8 +16,15 @@
     --mainTextColor: var(--mainTextColor-dark);
     --secondaryTextColor: var(--secondaryTextColor-dark);
     --mainLinkColor: var(--mainLinkColor-dark);
-    --mainBorderColor: var(--mainBorderColor-dark);
     --mainBackgroundColor: var(--mainBackgroundColor-dark);
+}
+
+body.light-mode {
+    --mainTextColor: var(--mainTextColor-light);
+    --secondaryTextColor: var(--secondaryTextColor-light);
+    --mainLinkColor: var(--mainLinkColor-light);
+    --mainBorderColor: var(--mainBorderColor-light);
+    --mainBackgroundColor: var(--mainBackgroundColor-light);
 }
 
 *{
@@ -174,4 +181,23 @@ li{
         border-left: none;
         padding-left: 0;
     }
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--mainBorderColor);
+    background-color: var(--mainTextColor);
+    color: var(--mainBackgroundColor);
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background-color: var(--mainBorderColor);
 }

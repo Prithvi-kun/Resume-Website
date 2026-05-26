@@ -1,0 +1,7 @@
+cd C:\Users\Prithvi\Downloads\kairos-main\backend
+python -m uvicorn main:app --reload
+cd C:\Users\Prithvi\Downloads\kairos-main\frontend
+npm run dev
+
+
+cd C:\Users\Prithvi\Downloads\kairos-main\backend.\venv\Scripts\activate

@@ -1,0 +1,14 @@
+Dear Hiring Team,
+
+I am applying for the Software Engineering Intern position at Google. I am a computer science student with experience in programming, data structures, and algorithmic problem-solving. I am eager to learn new things and improve my skills. 
+
+I have used C++ and Python in coursework and projects to solve algorithmic problems and write clean, understandable code. I am comfortable in debugging, handling edge cases, and analyzing time and space complexity. In one project, I implemented a convolutional neural network for image classification, which involved data preprocessing, model training, and performance evaluation.
+
+I am interested in data science and machine learning. I like working with data, building and evaluating models, and using web development as a side interest to present results in a clear and usable way. To support my interests, I am doing a separate degree on data science from IIT Madras in addition to the already existing college curriculum.
+
+I am a fast learner and am eager to learn from experienced developers at Google in applying strong computer science fundamentals in practice.
+
+Thank you for your time and consideration.
+
+Sincerely,
+Prithviraj R
