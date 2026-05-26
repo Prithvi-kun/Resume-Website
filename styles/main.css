@@ -200,4 +200,5 @@ li{
 
 .theme-toggle:hover {
     background-color: var(--mainBorderColor);
+    color: var(--mainTextColor);
 }
